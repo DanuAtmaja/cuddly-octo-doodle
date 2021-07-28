@@ -9,4 +9,4 @@ migrations:
 	cd ./SenjaCoffee.Data && dotnet ef --startup-project ../SenjaCoffee.Web/ migrations add $(mname) && cd ..
 
 db :
-	cd ./SolarCoffee.Data && dotnet ef --startup-project ../SenjaCoffee.Web/ database update && cd ..
+	cd ./SenjaCoffee.Data && dotnet ef --startup-project ../SenjaCoffee.Web/ database update && cd ..
