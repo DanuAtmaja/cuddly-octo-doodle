@@ -13,6 +13,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using SenjaCoffee.Data;
+using SenjaCoffee.Services.Product;
 
 namespace SenjaCoffee.Web
 {
@@ -39,6 +40,8 @@ namespace SenjaCoffee.Web
                 opts.EnableDetailedErrors();
                 opts.UseNpgsql(Configuration.GetConnectionString("senja.dev"));
             });
+
+            services.AddTransient<IProductService, ProductService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

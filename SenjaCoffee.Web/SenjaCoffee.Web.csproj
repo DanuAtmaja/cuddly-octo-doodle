@@ -23,11 +23,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\SenjaCoffee.Data\SenjaCoffee.Data.csproj" />
+    <ProjectReference Include="..\SenjaCoffee.Services\SenjaCoffee.Services.csproj" />
   </ItemGroup>
 
 </Project>
