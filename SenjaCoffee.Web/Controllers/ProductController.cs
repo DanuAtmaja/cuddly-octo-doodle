@@ -1,6 +1,8 @@
+using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using SenjaCoffee.Services.Product;
+using SenjaCoffee.Web.Serialization;
 
 namespace SenjaCoffee.Web.Controllers
 {
@@ -21,7 +23,11 @@ namespace SenjaCoffee.Web.Controllers
         {
            _logger.LogInformation("Getting all products");
            var products = _productService.GetAllProducts();
-           return Ok(products);
+           
+           var productViewModels = products
+                .Select(product => ProductMapper.SerializeProductModel(product));
+           
+           return Ok(productViewModels);
         }
     }
 }
