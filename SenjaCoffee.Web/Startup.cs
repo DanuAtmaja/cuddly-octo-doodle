@@ -13,6 +13,9 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using SenjaCoffee.Data;
+using SenjaCoffee.Services.Customer;
+using SenjaCoffee.Services.Inventory;
+using SenjaCoffee.Services.Order;
 using SenjaCoffee.Services.Product;
 
 namespace SenjaCoffee.Web
@@ -42,6 +45,9 @@ namespace SenjaCoffee.Web
             });
 
             services.AddTransient<IProductService, ProductService>();
+            services.AddTransient<ICustomerService, CustomerService>();
+            services.AddTransient<IInventoryService, InventoryService>();
+            services.AddTransient<IOrderService, OrderService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

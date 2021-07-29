@@ -4,7 +4,7 @@ using SenjaCoffee.Web.ViewModels;
 
 namespace SenjaCoffee.Web.Serialization
 {
-    public class ProductMapper
+    public static class ProductMapper
     {
         /// <summary>
         /// Maps a Product data model to a ProductMode view model
